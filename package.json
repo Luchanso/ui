@@ -13,7 +13,9 @@
     "lintnofix": "eslint . --ext .js,.jsx",
     "lint:css": "stylelint 'src/**/*.css'",
     "test": "NODE_PATH=./src NODE_ENV=test mocha --ui bdd --reporter nyan -r test/initializeJsdom.js $(find src -name '*.spec.*')",
-    "test:watch": "npm test -- --watch --watch-extensions jsx,js"
+    "test:watch": "npm test -- --watch --watch-extensions jsx,js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "greenkeeper": {
     "label": "type: greenkeeper"
@@ -61,7 +63,8 @@
     "uuid": "^3.0.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.2.0-rc.0",
-    "wordcloud": "^1.0.5"
+    "wordcloud": "^1.0.5",
+    "snyk": "^1.41.1"
   },
   "devDependencies": {
     "babel-core": "6.24.1",
@@ -103,5 +106,6 @@
   "moduleRoots": [
     "./src",
     "./node_modules"
-  ]
+  ],
+  "snyk": true
 }
